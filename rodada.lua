@@ -1,11 +1,11 @@
-function rodada(num, tabela)
+function rodada(numRodadas, tabelaPalavras)
   local pontos = 0
-  for i = 1, num do
+  for i = 1, numRodadas do
     print("\nPalavra:")
-    print(tabela[i])
+    print(tabelaPalavras[i])
     local comp = io.read()
     if (comp == "" and i == 1) then comp = io.read() end
-    if tabela[i] == comp then
+    if tabelaPalavras[i] == comp then
       pontos = pontos + 1000
       print("AEEEEEEEE!!")
     else

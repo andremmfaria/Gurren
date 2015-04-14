@@ -4,7 +4,7 @@ local entrada = io.open("Dicionario","r")
 local saida = io.open("dicionario.lua","w")
 
 local n = 0
-local prefixo = "dic = {"
+local prefixo = "dicionario = {"
 saida:write(prefixo)
 local aspas = string.char(34)
 

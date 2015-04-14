@@ -13,6 +13,25 @@ V0.5
 ###Proximate Size:
 662 Kb
 
+###About the game
+	This is a simple words game.
+	As the game opens it prompts the user to input the number of rounds he/she wants to play. Then the program starts a timer and shows word after word for the user to input. If the input was correct a "congratulations" message is shown, else a "bad word" message is shown.
+	After all the rounds, the timer stops and the score is given to the player. The score format is:
+	(Correct words - Incorrect words)/(Duration of the game)
+
+###Architecture
+	This is the architecture of the code. This is always reflecting the latest version of the code.
+|main.lua|
+|
+|--|preparaDicionario.lua|
+|
+|--|constroiListaPalavras.lua|
+|  |
+|  |--|dicionario.lua|
+|
+|--|rodada.lua|
+|
+
 ###Coding History
 
 ####Before 2015-04-01
@@ -136,3 +155,41 @@ V0.5
 
 ####2015-04-13
 	The project is pretty much ready for a first version, but i want to do a nice GUI for it, so its in version 0.5 :)
+
+####2015-04-14
+	Changed variable names to make the code more understandable. Updated code on github
+	Files written:
+	*main.lua
+		*main()
+			*Prompts the user for a number of rounds(numRodadas)
+			*Calls function constroiListaPalavras(dicionario, numRodadas) => tabelaPalavras
+			*Gets initial time with os.time()(tini)
+			*Calls rodada(tabelaPalavras, numRodadas) => pontos
+			*Gets final time with os.time()(tfim)
+			*pontos = pontos/(tfim-tini)
+			*Prints pontos
+	*constroiListaPalavras.lua
+		*constroiListaPalavras(dicionario, numRodadas)
+			*Pics random numbers(numAletorio), between 1 and 29858(maxPalavras), numRodadas times
+			*Iterates over the dicionario table filling a table(tabelaPalavras) with the strings from the file
+			*Returns tabelaPalavras
+	*rodada.lua
+		*rodada(tabelaPalavras, numRodadas)
+			*Creates a points counter(pontos) that starts at 0
+			*Does the following numRodadas times
+				1.Prints "Palavra" and the current word from hash
+				2.Prompts the user for the word
+				3.Compares the user input with the current hash word
+				4.If the user input was correct pontos+=1000 else pontos-=1000
+			*returns pontos
+	*preparaDicionario.lua
+		*preparaDicionario()
+			*Opens two files input(entrada) and output(saida)
+			*Entrada is the raw dictionary file
+			*Saida is the formatted dictionary file
+			*Reads from the raw file and formats it in a table(dicionario) witch each element is a word of the dictionary.
+			*Returns dictionario
+	*dicionario.lua
+		*Contains the formatted dictionary from the raw dictionary file
+	*Dicionario
+		*Contains the raw data to be converted in preparaDicionario.lua to dicionario.lua

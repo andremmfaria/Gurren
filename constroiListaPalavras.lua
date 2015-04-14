@@ -1,12 +1,14 @@
-function constroiListaPalavras(num, dic)
-  local tabela = {}
-  for i = 1, num do
+require "dicionario"
+
+function constroiListaPalavras(numRodadas)
+  local tabelaPalavras = {}
+  for i = 1, numRodadas do
     local n = 0
-    local aleat = math.random(MAX)
-    while n ~= num do
+    local numAleatorio = math.random(maxPalavras)
+    while n ~= numRodadas do
       n = n + 1
-      tabela[i] = dic[aleat]
+      tabelaPalavras[i] = dicionario[numAleatorio]
     end
   end
-  return tabela
+  return tabelaPalavras
 end
