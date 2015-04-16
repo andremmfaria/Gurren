@@ -32,7 +32,7 @@ V0.5
 |--|rodada.lua|
 |
 ```
-
+```
 Preconditions:
 1. Prompts the user to input the number of words he/she wants to play
 2. Use a dictionary to pick the number of words ramdomly
@@ -44,7 +44,7 @@ Postconditions
 2. Parse a dictionary to be loaded into memory and loads the number of random words into memory
 3. Prompts the user to input the first word and start a counter
 4. After all the words has been prompted and inputted the timer stops and the score is shown
-
+```
 
 ###Coding History
 
@@ -208,7 +208,7 @@ Postconditions
 	*Dicionario
 		*Contains the raw data to be converted in preparaDicionario.lua to dicionario.lua
 
-####2015-04-14
+####2015-04-16
 	Created a time variable and prints the overall time. Updated code on github
 	Files written:
 	*main.lua
