@@ -21,6 +21,8 @@ V0.5
 
 ###Architecture
 	This is the architecture of the code. This is always reflecting the latest version of the code.
+
+```
 |main.lua|
 |
 |--|preparaDicionario.lua|
@@ -31,6 +33,7 @@ V0.5
 |
 |--|rodada.lua|
 |
+```
 
 ###Coding History
 
