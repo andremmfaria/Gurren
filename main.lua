@@ -13,11 +13,14 @@ function main()
   local tempoInicio = os.time()
   pontos = rodada(numRodadas, tabelaPalavras)
   local tempoFim = os.time()
+  tempo = tempoFim-tempoInicio
   if pontos > 0 then
-    resultado = math.ceil(pontos/(tempoFim-tempoInicio))
+    resultado = math.ceil(pontos/)
   else
     resultado = 0
   end
+  print("\nSeu tempo foi:")
+  print(tempo) print("segundos")
   print("\nSeu score e:")
   print(resultado)
   print("\n")
