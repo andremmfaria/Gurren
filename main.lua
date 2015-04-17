@@ -15,12 +15,12 @@ function main()
   local tempoFim = os.time()
   tempo = tempoFim-tempoInicio
   if pontos > 0 then
-    resultado = math.ceil(pontos/)
+    resultado = math.ceil(pontos/tempo)
   else
     resultado = 0
   end
   print("\nSeu tempo foi:")
-  print(tempo) print("segundos")
+  print(tempo .. " segundos")
   print("\nSeu score e:")
   print(resultado)
   print("\n")
